@@ -1,0 +1,13 @@
+﻿.slick-cell.selected 
+{
+    background-color: lightblue;
+}
+.slick-cell.active
+{
+    background-color: lightblue;
+}
+
+.slick-row.selected .cell-selection
+{
+    background-color: lightblue; /* show default selected row background */
+}

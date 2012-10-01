@@ -1,0 +1,519 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{930FC01A-5B75-4D0B-957B-87B1EC0F38DC}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HaushaltsRechner</RootNamespace>
+    <AssemblyName>HaushaltsRechner</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\packages\AjaxControlToolkit.4.1.60623\lib\35\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="AjaxMin, Version=4.67.4639.17277, Culture=neutral, PublicKeyToken=21ef50ce11b5d80f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AjaxMin.4.67.4639.17289\lib\net40\AjaxMin.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.0\lib\net35-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.4.5.9\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SanitizerProviders">
+      <HintPath>..\packages\AjaxControlToolkit.4.1.60623\lib\35\SanitizerProviders\SanitizerProviders.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\default\Grid.css" />
+    <Content Include="App_Themes\default\Icons.css" />
+    <Content Include="App_Themes\default\Common.css" />
+    <Content Include="App_Themes\ajax-loader.gif" />
+    <Content Include="App_Themes\default\Buttons.css" />
+    <Content Include="App_Themes\default\Images\Icons\Delete3232.ico" />
+    <Content Include="App_Themes\default\Images\Icons\Edit3232.ico" />
+    <Content Include="App_Themes\default\Images\Icons\Add3232.ico" />
+    <Content Include="App_Themes\default\Images\Icons\Clear3232.ico" />
+    <Content Include="App_Themes\default\Images\Icons\Find3232.ico" />
+    <Content Include="App_Themes\default\Images\Icons\Rights3232.ico" />
+    <Content Include="App_Themes\default\Images\Icons\Select3232.ico" />
+    <Content Include="App_Themes\default\Images\Icons\UserGroupEdit3232.ico" />
+    <Content Include="App_Themes\default\Search.css" />
+    <Content Include="App_Themes\default\Start.css" />
+    <Content Include="App_Themes\default\Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="App_Themes\default\Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="App_Themes\default\Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="App_Themes\default\Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="App_Themes\default\Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="App_Themes\default\Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="App_Themes\default\Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="App_Themes\default\Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="App_Themes\default\Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="App_Themes\default\Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="App_Themes\default\Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="App_Themes\default\Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="App_Themes\default\Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="App_Themes\default\Content\themes\base\jquery-ui.css" />
+    <Content Include="App_Themes\default\Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="App_Themes\default\Content\themes\base\jquery.ui.all.css" />
+    <Content Include="App_Themes\default\Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="App_Themes\default\Content\themes\base\jquery.ui.base.css" />
+    <Content Include="App_Themes\default\Content\themes\base\jquery.ui.button.css" />
+    <Content Include="App_Themes\default\Content\themes\base\jquery.ui.core.css" />
+    <Content Include="App_Themes\default\Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="App_Themes\default\Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="App_Themes\default\Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="App_Themes\default\Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="App_Themes\default\Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="App_Themes\default\Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="App_Themes\default\Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="App_Themes\default\Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="App_Themes\default\Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="App_Themes\default\Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="App_Themes\default\Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="App_Themes\default\Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="App_Themes\default\Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="App_Themes\default\Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="App_Themes\default\Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="App_Themes\default\Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="App_Themes\default\Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="App_Themes\default\Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="App_Themes\default\Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="App_Themes\default\Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="App_Themes\default\Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="App_Themes\default\Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="App_Themes\default\Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="App_Themes\default\Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="App_Themes\default\Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="App_Themes\default\Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="App_Themes\default\Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="App_Themes\default\Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="App_Themes\default\Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="App_Themes\default\Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="App_Themes\default\Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="App_Themes\default\Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="App_Themes\default\Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="App_Themes\default\Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="App_Themes\Spacer.gif" />
+    <Content Include="App_Themes\default\Content\themes\base\images\header-columns-bg.gif" />
+    <Content Include="App_Themes\default\Content\themes\base\images\sort-asc.gif" />
+    <Content Include="App_Themes\default\Content\themes\base\images\sort-desc.gif" />
+    <Content Include="App_Themes\default\Content\themes\base\slick.columnpicker.css" />
+    <Content Include="App_Themes\default\Content\themes\base\slick.grid.css" />
+    <Content Include="App_Themes\default\Content\themes\base\slick.headerbuttons.css" />
+    <Content Include="App_Themes\default\Content\themes\base\slick.headermenu.css" />
+    <Content Include="App_Themes\default\Content\themes\base\slick.pager.css" />
+    <Content Include="App_Themes\default\Content\themes\base\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="App_Themes\default\Content\themes\base\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="App_Themes\default\Content\themes\base\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="App_Themes\default\Content\themes\base\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="App_Themes\default\Content\themes\base\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="App_Themes\default\Content\themes\base\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="App_Themes\default\Content\themes\base\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="App_Themes\default\Content\themes\base\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="App_Themes\default\Content\themes\base\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="App_Themes\default\Content\themes\base\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="App_Themes\default\Content\themes\base\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="App_Themes\default\Content\themes\base\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="App_Themes\default\Content\themes\base\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="App_Themes\default\Content\themes\base\themes\base\jquery-ui.css" />
+    <Content Include="App_Themes\default\Content\themes\base\themes\base\jquery.ui.accordion.css" />
+    <Content Include="App_Themes\default\Content\themes\base\themes\base\jquery.ui.all.css" />
+    <Content Include="App_Themes\default\Content\themes\base\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="App_Themes\default\Content\themes\base\themes\base\jquery.ui.base.css" />
+    <Content Include="App_Themes\default\Content\themes\base\themes\base\jquery.ui.button.css" />
+    <Content Include="App_Themes\default\Content\themes\base\themes\base\jquery.ui.core.css" />
+    <Content Include="App_Themes\default\Content\themes\base\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="App_Themes\default\Content\themes\base\themes\base\jquery.ui.dialog.css" />
+    <Content Include="App_Themes\default\Content\themes\base\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="App_Themes\default\Content\themes\base\themes\base\jquery.ui.resizable.css" />
+    <Content Include="App_Themes\default\Content\themes\base\themes\base\jquery.ui.selectable.css" />
+    <Content Include="App_Themes\default\Content\themes\base\themes\base\jquery.ui.slider.css" />
+    <Content Include="App_Themes\default\Content\themes\base\themes\base\jquery.ui.tabs.css" />
+    <Content Include="App_Themes\default\Content\themes\base\themes\base\jquery.ui.theme.css" />
+    <Content Include="App_Themes\default\Content\themes\base\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="App_Themes\default\Content\themes\base\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="App_Themes\default\Content\themes\base\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="App_Themes\default\Content\themes\base\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="App_Themes\default\Content\themes\base\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="App_Themes\default\Content\themes\base\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="App_Themes\default\Content\themes\base\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="App_Themes\default\Content\themes\base\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="App_Themes\default\Content\themes\base\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="App_Themes\default\Content\themes\base\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="App_Themes\default\Content\themes\base\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="App_Themes\default\Content\themes\base\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="App_Themes\default\Content\themes\base\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="App_Themes\default\Content\themes\base\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="App_Themes\default\Content\themes\base\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="App_Themes\default\Content\themes\base\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="App_Themes\default\Content\themes\base\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="App_Themes\default\Content\themes\base\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="App_Themes\default\Content\themes\base\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="App_Themes\default\Content\themes\base\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="App_Themes\default\Content\themes\base\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="App_Themes\default\Content\themes\base\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="App_Themes\default\Content\themes\base\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="App_Themes\default\Content\themes\base\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="App_Themes\default\Content\themes\base\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="App_Themes\default\Content\themes\base\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Controls\Admin\AdminAccount.ascx" />
+    <Content Include="Controls\Admin\AdminAccountToolBar.ascx" />
+    <Content Include="Controls\Admin\AdminNavigation.ascx" />
+    <Content Include="Controls\Admin\AdminNavigationLink.ascx" />
+    <Content Include="Controls\Admin\AdminUser.ascx" />
+    <Content Include="Controls\Admin\AdminUserToolBar.ascx" />
+    <Content Include="Controls\KategorieResult.ascx" />
+    <Content Include="Controls\KategorieSearch.ascx" />
+    <Content Include="Controls\UebersichtResult.ascx" />
+    <Content Include="Controls\UebersichtSearch.ascx" />
+    <Content Include="Controls\UebersichtToolBar.ascx" />
+    <Content Include="default.aspx" />
+    <Content Include="Form\Admin\Admin.aspx" />
+    <Content Include="Form\Ich.aspx" />
+    <Content Include="Form\Kategorie.aspx" />
+    <Content Include="Form\Start.aspx" />
+    <Content Include="Form\Uebersicht.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\10-jquery-maskMoney.debug.js" />
+    <None Include="Properties\PublishProfiles\Haushaltsrechner_local.pubxml" />
+    <None Include="Scripts\jquery-1.8.1.intellisense.js" />
+    <Content Include="Scripts\00-jquery-1.8.1.debug.js" />
+    <Content Include="Scripts\15-Localisation.debug.js" />
+    <Content Include="Scripts\34-Grids.debug.js" />
+    <Content Include="Scripts\jquery-1.8.1.min.js" />
+    <Content Include="Scripts\01-jquery-ui-1.8.23.debug.js" />
+    <Content Include="Scripts\10-jquery.event.drag.debug.js" />
+    <Content Include="Scripts\jquery.event.drag.min.js" />
+    <Content Include="Scripts\jsmin.min.js" />
+    <Content Include="Scripts\31-Connections.debug.js" />
+    <Content Include="Scripts\33-Dialogs.debug.js" />
+    <Content Include="Scripts\30-Base.debug.js" />
+    <Content Include="Scripts\32-GUI.debug.js" />
+    <Content Include="Scripts\10-jquery.maskedinput-1.3.min.debug.js" />
+    <Content Include="Scripts\20-Json.debug.js" />
+    <Content Include="Scripts\SlickGrid\Controls\slick.columnpicker.js" />
+    <Content Include="Scripts\SlickGrid\Controls\slick.pager.js" />
+    <Content Include="Scripts\SlickGrid\Plugins\slick.autotooltips.js" />
+    <Content Include="Scripts\SlickGrid\Plugins\slick.cellcopymanager.js" />
+    <Content Include="Scripts\SlickGrid\Plugins\slick.cellrangedecorator.js" />
+    <Content Include="Scripts\SlickGrid\Plugins\slick.cellrangeselector.js" />
+    <Content Include="Scripts\SlickGrid\Plugins\slick.cellselectionmodel.js" />
+    <Content Include="Scripts\SlickGrid\Plugins\slick.checkboxselectcolumn.js" />
+    <Content Include="Scripts\SlickGrid\Plugins\slick.headerbuttons.js" />
+    <Content Include="Scripts\SlickGrid\Plugins\slick.headermenu.js" />
+    <Content Include="Scripts\SlickGrid\Plugins\slick.rowmovemanager.js" />
+    <Content Include="Scripts\SlickGrid\Plugins\slick.rowselectionmodel.js" />
+    <Content Include="Scripts\SlickGrid\slick.core.js" />
+    <Content Include="Scripts\SlickGrid\slick.dataview.js" />
+    <Content Include="Scripts\SlickGrid\slick.editors.js" />
+    <Content Include="Scripts\SlickGrid\slick.formatters.js" />
+    <Content Include="Scripts\SlickGrid\slick.grid.js" />
+    <Content Include="Scripts\SlickGrid\slick.groupitemmetadataprovider.js" />
+    <Content Include="Scripts\SlickGrid\slick.remotemodel.js" />
+    <Content Include="Services\AccountService.asmx" />
+    <Content Include="Services\CategoryService.asmx" />
+    <Content Include="Services\MovementService.asmx" />
+    <Content Include="Services\ReasonService.asmx" />
+    <Content Include="Services\UserService.asmx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\Admin\AdminAccount.ascx.cs">
+      <DependentUpon>AdminAccount.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Admin\AdminAccount.ascx.designer.cs">
+      <DependentUpon>AdminAccount.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Admin\AdminAccountToolBar.ascx.cs">
+      <DependentUpon>AdminAccountToolBar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Admin\AdminAccountToolBar.ascx.designer.cs">
+      <DependentUpon>AdminAccountToolBar.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Admin\AdminNavigation.ascx.cs">
+      <DependentUpon>AdminNavigation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Admin\AdminNavigation.ascx.designer.cs">
+      <DependentUpon>AdminNavigation.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Admin\AdminNavigationLink.ascx.cs">
+      <DependentUpon>AdminNavigationLink.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Admin\AdminNavigationLink.ascx.designer.cs">
+      <DependentUpon>AdminNavigationLink.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Admin\AdminUser.ascx.cs">
+      <DependentUpon>AdminUser.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Admin\AdminUser.ascx.designer.cs">
+      <DependentUpon>AdminUser.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Admin\AdminUserToolBar.ascx.cs">
+      <DependentUpon>AdminUserToolBar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Admin\AdminUserToolBar.ascx.designer.cs">
+      <DependentUpon>AdminUserToolBar.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\KategorieResult.ascx.cs">
+      <DependentUpon>KategorieResult.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\KategorieResult.ascx.designer.cs">
+      <DependentUpon>KategorieResult.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\KategorieSearch.ascx.cs">
+      <DependentUpon>KategorieSearch.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\KategorieSearch.ascx.designer.cs">
+      <DependentUpon>KategorieSearch.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UebersichtResult.ascx.cs">
+      <DependentUpon>UebersichtResult.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\UebersichtResult.ascx.designer.cs">
+      <DependentUpon>UebersichtResult.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UebersichtSearch.ascx.cs">
+      <DependentUpon>UebersichtSearch.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\UebersichtSearch.ascx.designer.cs">
+      <DependentUpon>UebersichtSearch.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UebersichtToolBar.ascx.cs">
+      <DependentUpon>UebersichtToolBar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\UebersichtToolBar.ascx.designer.cs">
+      <DependentUpon>UebersichtToolBar.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Admin\Admin.aspx.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\Admin\Admin.aspx.designer.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Kategorie.aspx.cs">
+      <DependentUpon>Kategorie.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\Kategorie.aspx.designer.cs">
+      <DependentUpon>Kategorie.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\LoginFormBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\Ich.aspx.cs">
+      <DependentUpon>Ich.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\Ich.aspx.designer.cs">
+      <DependentUpon>Ich.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Start.aspx.cs">
+      <DependentUpon>Start.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\Start.aspx.designer.cs">
+      <DependentUpon>Start.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Uebersicht.aspx.cs">
+      <DependentUpon>Uebersicht.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\Uebersicht.aspx.designer.cs">
+      <DependentUpon>Uebersicht.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\AccountService.asmx.cs">
+      <DependentUpon>AccountService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Services\CategoryService.asmx.cs">
+      <DependentUpon>CategoryService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Services\MovementService.asmx.cs">
+      <DependentUpon>MovementService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Services\ReasonService.asmx.cs">
+      <DependentUpon>ReasonService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Services\UserService.asmx.cs">
+      <DependentUpon>UserService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Template\Content.master.cs">
+      <DependentUpon>Content.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Template\Content.master.designer.cs">
+      <DependentUpon>Content.master</DependentUpon>
+    </Compile>
+    <Compile Include="Template\HaushaltsRechner.Master.cs">
+      <DependentUpon>HaushaltsRechner.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Template\HaushaltsRechner.Master.designer.cs">
+      <DependentUpon>HaushaltsRechner.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UIProcess\Mapper\AccountUser.cs" />
+    <Compile Include="UIProcess\Mapper\ActiveRight.cs" />
+    <Compile Include="UIProcess\Mapper\EditMovement.cs" />
+    <Compile Include="UIProcess\Mapper\EditReason.cs" />
+    <Compile Include="UIProcess\Mapper\NewAccount.cs" />
+    <Compile Include="UIProcess\Mapper\NewMovement.cs" />
+    <Compile Include="UIProcess\Mapper\NewUser.cs" />
+    <Compile Include="UIProcess\Mapper\UserLogin.cs" />
+    <Compile Include="UIProcess\SessionManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Template\HaushaltsRechner.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\images\" />
+    <Folder Include="Scripts\Custom\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Template\Content.master" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HaushaltsRechner.Business\HaushaltsRechner.Business.csproj">
+      <Project>{0cfa532b-59a7-4225-8493-1cd4a587b1cd}</Project>
+      <Name>HaushaltsRechner.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HaushaltsRechner.Data\HaushaltsRechner.Data.csproj">
+      <Project>{428a32f3-3ad1-453e-84a9-a5c019715138}</Project>
+      <Name>HaushaltsRechner.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2129</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

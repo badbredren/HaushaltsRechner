@@ -1,0 +1,67 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{727840A7-F5D4-422B-97D7-EB9EC438CC9B}"
+	ProjectSection(SolutionItems) = preProject
+		HaushaltsRechner1.vsmdi = HaushaltsRechner1.vsmdi
+		Local.testsettings = Local.testsettings
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HaushaltsRechner", "HaushaltsRechner\HaushaltsRechner.csproj", "{930FC01A-5B75-4D0B-957B-87B1EC0F38DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HaushaltsRechner.Data", "HaushaltsRechner.Data\HaushaltsRechner.Data.csproj", "{428A32F3-3AD1-453E-84A9-A5C019715138}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HaushaltsRechner.Business", "HaushaltsRechner.Business\HaushaltsRechner.Business.csproj", "{0CFA532B-59A7-4225-8493-1CD4A587B1CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HaushaltsRechner.Test", "HaushaltsRechner.Test\HaushaltsRechner.Test.csproj", "{2049DD39-2C6C-41B0-BDEB-DB64D5765DDA}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://thomaswork-pc:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = HaushaltsRechner.Business\\HaushaltsRechner.Business.csproj
+		SccProjectName1 = HaushaltsRechner.Business
+		SccLocalPath1 = HaushaltsRechner.Business
+		SccProjectUniqueName2 = HaushaltsRechner.Data\\HaushaltsRechner.Data.csproj
+		SccProjectName2 = HaushaltsRechner.Data
+		SccLocalPath2 = HaushaltsRechner.Data
+		SccProjectUniqueName3 = HaushaltsRechner\\HaushaltsRechner.csproj
+		SccProjectName3 = HaushaltsRechner
+		SccLocalPath3 = HaushaltsRechner
+		SccProjectUniqueName4 = HaushaltsRechner.Test\\HaushaltsRechner.Test.csproj
+		SccProjectName4 = HaushaltsRechner.Test
+		SccLocalPath4 = HaushaltsRechner.Test
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = HaushaltsRechner1.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{930FC01A-5B75-4D0B-957B-87B1EC0F38DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{930FC01A-5B75-4D0B-957B-87B1EC0F38DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{930FC01A-5B75-4D0B-957B-87B1EC0F38DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{930FC01A-5B75-4D0B-957B-87B1EC0F38DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{428A32F3-3AD1-453E-84A9-A5C019715138}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{428A32F3-3AD1-453E-84A9-A5C019715138}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{428A32F3-3AD1-453E-84A9-A5C019715138}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{428A32F3-3AD1-453E-84A9-A5C019715138}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CFA532B-59A7-4225-8493-1CD4A587B1CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CFA532B-59A7-4225-8493-1CD4A587B1CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CFA532B-59A7-4225-8493-1CD4A587B1CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CFA532B-59A7-4225-8493-1CD4A587B1CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2049DD39-2C6C-41B0-BDEB-DB64D5765DDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2049DD39-2C6C-41B0-BDEB-DB64D5765DDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+EndGlobal

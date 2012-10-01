@@ -1,0 +1,86 @@
+﻿input[type=text]
+{
+    width:120px;
+    border: 1px solid #444;
+}
+
+.Start_User 
+{
+    width:200px;
+    height:100px;
+    border:1px solid #000000;
+    background-color: #dddddd;
+}
+
+.Start_User:hover
+{
+    width:200px;
+    height:100px;
+    border:2px solid #000000;
+    background-color: #bbbbbb;
+}
+
+.Start_Content {
+    height:100%;
+    width:100%;
+    background-color:#aaaaaa;
+}
+
+.Menu
+{
+    width: 100%;
+    height: 30px;
+    min-width: 1000px;
+    float: left;
+    border:1px solid #000;
+    margin-left:5px;
+    margin-right:5px;
+}
+
+.Menu_Entry
+{
+    float:left;
+    height: 100%;
+    margin: 0 5px 0 5px;
+    padding: 0 5px 0 5px;
+    border-left: 1px solid #c3c3c3;
+    border-right: 1px solid #c3c3c3;
+    cursor: pointer;
+}
+
+.Menu_Entry:hover
+{
+    background-color: #c3c3c3;
+}
+
+.Menu_Entry_Active {
+	background-color: #888;
+}
+
+.Content
+{
+    width:100%;
+    min-width: 1000px;
+    height:563px; 
+    margin:5px; 
+    background-color:#000; 
+    float:left;
+}
+
+.Footer
+{
+    width:100%;
+    height:30px;
+    min-width: 1000px;
+    border:1px solid #000; 
+    bottom:30px;
+    z-index:100000;
+    margin-left:5px;
+    margin-right:5px;
+    float:left;
+}
+
+.Clear
+{
+    clear:both;
+}

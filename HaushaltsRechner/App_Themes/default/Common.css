@@ -1,0 +1,17 @@
+﻿.AjaxLoaderContainer
+{
+    height: 98%;
+    width: 99%;
+    position: absolute;
+    z-index: 9999999;
+    display: none;
+    background-color: #FFFFFF;
+    opacity:0.4;
+}
+
+.AjaxLoaderGif
+{
+    margin-left:45%;
+    margin-top:20%; 
+    float:left;   
+}

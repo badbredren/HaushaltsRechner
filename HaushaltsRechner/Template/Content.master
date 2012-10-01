@@ -1,0 +1,45 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Template/HaushaltsRechner.Master" AutoEventWireup="true" CodeBehind="Content.master.cs" Inherits="HaushaltsRechner.Template.Content" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+    <div class="Menu" runat="server" id="MainMenu">   
+          
+    </div> 
+    <div class="Content">  
+    
+        <div class="Search_SearchPanel">
+            <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Always">
+                <ContentTemplate>
+                                
+                    <asp:ContentPlaceHolder ID="SearchPanel" runat="server">        
+                    </asp:ContentPlaceHolder>
+
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </div>   
+        <div class="Search_ResultAndToolbarPanel">
+            <div class="Search_Toolbar">
+                 <asp:ContentPlaceHolder ID="Toolbar" runat="server">
+        
+                </asp:ContentPlaceHolder>
+            </div>            
+            <div class="Search_ResultGrid">
+            
+            <asp:UpdatePanel ID="UpdatePanel2" runat="server" UpdateMode="Always">
+                <ContentTemplate>
+
+                    <asp:ContentPlaceHolder ID="ResultGrid" runat="server">        
+                    </asp:ContentPlaceHolder>  
+                
+                </ContentTemplate>              
+            </asp:UpdatePanel>
+            </div>
+        </div>   
+    </div>
+    <div class="Footer">  
+        Footer      
+    </div>
+
+</asp:Content>

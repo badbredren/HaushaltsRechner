@@ -1,0 +1,29 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="HaushaltsRechner.master.cs" Inherits="HaushaltsRechner.Template.HaushaltsRechner" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <script type="text/javascript">
+
+    </script>
+</head>
+<body>
+    <div id="AjaxLoaderGifContainer" class="AjaxLoaderContainer">
+        <div class="AjaxLoaderGif">
+            <img src='../App_Themes/ajax-loader.gif' alt="Loading" id="AjaxLoaderGifStandard" style="visibility:hidden;" />
+            <img src='../../App_Themes/ajax-loader.gif' alt="Loading" id="AjaxLoaderGifAdmin" style="visibility:hidden;"/>
+        </div>
+    </div>
+    <form id="form1" runat="server">
+    <asp:ScriptManager runat="server" id="sm">    
+    </asp:ScriptManager>
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+    </asp:ContentPlaceHolder>
+    </form>
+</body>
+</html>

@@ -1,0 +1,59 @@
+﻿.Search_SearchPanel {
+    width:30%;
+    height:550px;
+    background-color: #c3c3c3;
+    float: left;
+    margin: 3px;
+    float: left;
+    font-family: 'Times New Roman';
+    font-size: 0.95em;    
+}
+
+.Search_ResultAndToolbarPanel 
+{
+    width: 68.5%;
+    height: 550px;
+    float:left;
+    margin:3px;
+    float: left;
+    font-family: 'Times New Roman';
+    font-size: 0.95em; 
+}
+
+.Search_Toolbar {
+    width:100%;
+    height:32px;
+    float:left;
+    background-color: #c3c3c3;
+    border: 1px solid #777;
+}
+
+.Search_ResultGrid {
+    width: 100%; 
+    height: 517px;
+    background-color: #c3c3c3;
+    border: 1px solid #777;
+    float:left;  
+}
+
+.Search_TextHeader 
+{    
+	font-size: 0.97em;
+	font-weight: bold;	
+	float:left;
+}
+
+.Search_LeftColumn {
+	margin:5px 0 0 5px;
+	float:left;
+	width:150px;
+}
+
+.Search_RightColumn {
+	margin:5px 0 0 0;
+	float:left;
+}
+
+.Search_Buttons {
+	margin:10px 0 0 5px;
+}
