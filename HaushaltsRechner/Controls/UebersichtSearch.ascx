@@ -111,25 +111,7 @@
 
 <div class="Clear"></div>
 <hr />
-<div class="Search_Buttons">
-    <%--<asp:ImageButton 
-        runat="server" 
-        ID="btnSearch" 
-        AlternateText="Suchen" 
-        onclick="btnSearch_Click"
-        Height="32px" 
-        Width="32px"
-        ImageUrl="~/App_Themes/Spacer.gif" 
-        CssClass="Find3232"  />
-        <asp:ImageButton 
-        runat="server" 
-        ID="btnReset" 
-        AlternateText="Zurücksetzen" 
-        onclick="btnReset_Click"
-        Height="32px" 
-        Width="32px"
-        ImageUrl="~/App_Themes/Spacer.gif" 
-        CssClass="Clear3232"  />--%>
+<div class="Search_Buttons"> 
     <asp:ImageButton 
         runat="server" 
         ID="btnSearch" 

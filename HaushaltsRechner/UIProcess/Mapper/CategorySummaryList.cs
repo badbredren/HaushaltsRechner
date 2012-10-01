@@ -37,8 +37,8 @@ using System.Web;
 
 namespace HaushaltsRechner.UIProcess.Mapper
 {
-    public class CategorySummaryList : IList<CategorySummary>
-    {
+    //public class CategorySummaryList : IList<CategorySummary>
+    //{
         
-    }
+    //}
 }
