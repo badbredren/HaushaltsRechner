@@ -1,0 +1,1 @@
+Projekt für Visual Studio 2012 (.NET 4.5, EntityFramework 5.0)
