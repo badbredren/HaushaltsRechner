@@ -451,8 +451,11 @@
     </Compile>
     <Compile Include="UIProcess\Mapper\AccountUser.cs" />
     <Compile Include="UIProcess\Mapper\ActiveRight.cs" />
+    <Compile Include="UIProcess\Mapper\CategorySummary.cs" />
+    <Compile Include="UIProcess\Mapper\CategorySummaryList.cs" />
     <Compile Include="UIProcess\Mapper\EditMovement.cs" />
     <Compile Include="UIProcess\Mapper\EditReason.cs" />
+    <Compile Include="UIProcess\Mapper\GridMovement.cs" />
     <Compile Include="UIProcess\Mapper\NewAccount.cs" />
     <Compile Include="UIProcess\Mapper\NewMovement.cs" />
     <Compile Include="UIProcess\Mapper\NewUser.cs" />
