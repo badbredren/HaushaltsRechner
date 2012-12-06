@@ -1,0 +1,180 @@
+<!-- 
+    This file is part of HaushaltsRechner.
+
+    HaushaltsRechner is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    HaushaltsRechner is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with HaushaltsRechner.  If not, see <http://www.gnu.org/licenses/>.
+
+    Diese Datei ist Teil von HaushaltsRechner.
+
+    HaushaltsRechner ist Freie Software: Sie können es unter den Bedingungen
+    der GNU General Public License, wie von der Free Software Foundation,
+    Version 3 der Lizenz oder (nach Ihrer Option) jeder späteren
+    veröffentlichten Version, weiterverbreiten und/oder modifizieren.
+
+    HaushaltsRechner wird in der Hoffnung, dass es nützlich sein wird, aber
+    OHNE JEDE GEWÄHELEISTUNG, bereitgestellt; sogar ohne die implizite
+    Gewährleistung der MARKTFÄHIGKEIT oder EIGNUNG FÜR EINEN BESTIMMTEN ZWECK.
+    Siehe die GNU General Public License für weitere Details.
+
+    Sie sollten eine Kopie der GNU General Public License zusammen mit diesem
+    Programm erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
+-->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <TableLayout 
+        xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:id="@+id/tableLayout1"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent" >
+ 
+       	<TableRow
+	        android:id="@+id/tableRow12"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:padding="5dip" >
+ 
+	        <TextView
+	            android:id="@+id/textAccount2"
+	            android:text="@string/account"
+	            android:textAppearance="?android:attr/textAppearanceLarge" 
+	            style="@style/NewEntryText"/>
+	        
+	         <Spinner
+			    android:id="@+id/spinnerAccount2"
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content" />
+	        
+	  	</TableRow>
+	  	
+       	<TableRow
+	        android:id="@+id/tableRow22"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:padding="5dip" >
+ 
+	        <TextView
+	            android:id="@+id/textCategory2"
+	            android:text="@string/account"
+	            android:textAppearance="?android:attr/textAppearanceLarge" 
+	            style="@style/NewEntryText"/>
+	        
+	         <Spinner
+			    android:id="@+id/spinnerCategory2"
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content" />
+	        
+	  	</TableRow>
+	        
+		<TableRow
+	        android:id="@+id/tableRow32"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:padding="5dip" >
+	        
+		     <TextView
+	            android:id="@+id/textAmount2"
+	            android:text="@string/amount"
+	            android:textAppearance="?android:attr/textAppearanceLarge" 	            
+	            style="@style/NewEntryText"/>
+	        
+	        <EditText
+		        android:id="@+id/tbAmount2"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"  
+		        android:inputType="numberDecimal"/>
+	        
+   		</TableRow>
+   		
+       	<TableRow
+	        android:id="@+id/tableRow42"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:padding="5dip" >     
+	        
+       	    <TextView
+	            android:id="@+id/textReason2"
+	            android:text="@string/reason"
+	            android:textAppearance="?android:attr/textAppearanceLarge"	            
+	            style="@style/NewEntryText" />
+	        
+	        <EditText
+		        android:id="@+id/tbReason2"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content" />	        
+	        
+	    </TableRow>
+   		
+       	<TableRow
+	        android:id="@+id/tableRow52"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:padding="5dip" > 
+	        
+       	     <TextView
+	            android:id="@+id/textDate2"
+	            android:text="@string/date"
+	            android:textAppearance="?android:attr/textAppearanceLarge"	            
+	            style="@style/NewEntryText" />
+       	     
+       	     <EditText
+		        android:id="@+id/tbDate2"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        style="@style/NewEntryText"  
+		        android:inputType="date"/>	
+	        
+       	</TableRow>
+   		
+       	     	
+   		
+       	<TableRow
+	        android:id="@+id/tableRow62"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:padding="5dip" >
+   		
+	       <Button 
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:id="@+id/btUpdate"
+	            android:text="@string/btUpdate"/> 
+	       
+	       <Button 
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:id="@+id/btFileDeletion"
+	            android:text="@string/btDelete"/>  
+	       
+      	</TableRow>
+      	
+       	<TableRow
+	        android:id="@+id/tableRow72"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:padding="5dip" >
+   		
+	       <Button 
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:id="@+id/btCancel"
+	            android:text="@string/btCancel"/>
+	       
+      	</TableRow>
+   		
+	</TableLayout>
+	
+</RelativeLayout>

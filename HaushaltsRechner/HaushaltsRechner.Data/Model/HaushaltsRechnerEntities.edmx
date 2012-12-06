@@ -1,0 +1,583 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="HaushaltsrechnerModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="HaushaltsrechnerModelStoreContainer">
+          <EntitySet Name="ACCOUNT" EntityType="HaushaltsrechnerModel.Store.ACCOUNT" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ACCOUNTUSER" EntityType="HaushaltsrechnerModel.Store.ACCOUNTUSER" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CATEGORY" EntityType="HaushaltsrechnerModel.Store.CATEGORY" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MOVEMENT" EntityType="HaushaltsrechnerModel.Store.MOVEMENT" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="REASON" EntityType="HaushaltsrechnerModel.Store.REASON" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RIGHT" EntityType="HaushaltsrechnerModel.Store.RIGHT" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RIGHTUSER" EntityType="HaushaltsrechnerModel.Store.RIGHTUSER" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="USER" EntityType="HaushaltsrechnerModel.Store.USER" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="V_OVERVIEW" EntityType="HaushaltsrechnerModel.Store.V_OVERVIEW" store:Type="Views" store:Schema="dbo" store:Name="V_OVERVIEW">
+            <DefiningQuery>SELECT 
+      [V_OVERVIEW].[ID] AS [ID], 
+      [V_OVERVIEW].[AMOUNT] AS [AMOUNT], 
+      [V_OVERVIEW].[MESSAGE] AS [MESSAGE], 
+      [V_OVERVIEW].[DATE_ADDED] AS [DATE_ADDED], 
+      [V_OVERVIEW].[DATE_EDIT] AS [DATE_EDIT], 
+      [V_OVERVIEW].[ACCOUNT_ID] AS [ACCOUNT_ID], 
+      [V_OVERVIEW].[CATEGORY_ID] AS [CATEGORY_ID], 
+      [V_OVERVIEW].[USER_ID] AS [USER_ID], 
+      [V_OVERVIEW].[USER_NAME] AS [USER_NAME], 
+      [V_OVERVIEW].[CATEGORY_NAME] AS [CATEGORY_NAME], 
+      [V_OVERVIEW].[ACCOUNT_NAME] AS [ACCOUNT_NAME], 
+      [V_OVERVIEW].[REASON_ID] AS [REASON_ID], 
+      [V_OVERVIEW].[REASON_TEXT] AS [REASON_TEXT]
+      FROM [dbo].[V_OVERVIEW] AS [V_OVERVIEW]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_ACCOUNTUSER_ACCOUNT1" Association="HaushaltsrechnerModel.Store.FK_ACCOUNTUSER_ACCOUNT1">
+            <End Role="ACCOUNT" EntitySet="ACCOUNT" />
+            <End Role="ACCOUNTUSER" EntitySet="ACCOUNTUSER" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ACCOUNTUSER_USER" Association="HaushaltsrechnerModel.Store.FK_ACCOUNTUSER_USER">
+            <End Role="USER" EntitySet="USER" />
+            <End Role="ACCOUNTUSER" EntitySet="ACCOUNTUSER" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MOVEMENT_ACCOUNT" Association="HaushaltsrechnerModel.Store.FK_MOVEMENT_ACCOUNT">
+            <End Role="ACCOUNT" EntitySet="ACCOUNT" />
+            <End Role="MOVEMENT" EntitySet="MOVEMENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MOVEMENT_CATEGORY" Association="HaushaltsrechnerModel.Store.FK_MOVEMENT_CATEGORY">
+            <End Role="CATEGORY" EntitySet="CATEGORY" />
+            <End Role="MOVEMENT" EntitySet="MOVEMENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MOVEMENT_REASON" Association="HaushaltsrechnerModel.Store.FK_MOVEMENT_REASON">
+            <End Role="REASON" EntitySet="REASON" />
+            <End Role="MOVEMENT" EntitySet="MOVEMENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MOVEMENT_USER" Association="HaushaltsrechnerModel.Store.FK_MOVEMENT_USER">
+            <End Role="USER" EntitySet="USER" />
+            <End Role="MOVEMENT" EntitySet="MOVEMENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RIGHTUSER_RIGHT" Association="HaushaltsrechnerModel.Store.FK_RIGHTUSER_RIGHT">
+            <End Role="RIGHT" EntitySet="RIGHT" />
+            <End Role="RIGHTUSER" EntitySet="RIGHTUSER" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RIGHTUSER_USER" Association="HaushaltsrechnerModel.Store.FK_RIGHTUSER_USER">
+            <End Role="USER" EntitySet="USER" />
+            <End Role="RIGHTUSER" EntitySet="RIGHTUSER" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="ACCOUNT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ACCOUNTUSER">
+          <Key>
+            <PropertyRef Name="USER_ID" />
+            <PropertyRef Name="ACCOUNT_ID" />
+          </Key>
+          <Property Name="USER_ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ACCOUNT_ID" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CATEGORY">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MOVEMENT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="AMOUNT" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="MESSAGE" Type="nvarchar(max)" />
+          <Property Name="DATE_ADDED" Type="datetime" Nullable="false" />
+          <Property Name="DATE_EDIT" Type="datetime" />
+          <Property Name="ACCOUNT_ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CATEGORY_ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="USER_ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="REASON_ID" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="REASON">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="TEXT" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RIGHT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RIGHTUSER">
+          <Key>
+            <PropertyRef Name="RIGHT_ID" />
+            <PropertyRef Name="USER_ID" />
+          </Key>
+          <Property Name="RIGHT_ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="USER_ID" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="USER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="PASSWORT" Type="nvarchar(max)" />
+          <Property Name="ISADMIN" Type="bit" />
+          <Property Name="CULTURE" Type="nvarchar(max)" />
+        </EntityType>
+        <!--Während der Generierung sind Fehler aufgetreten:
+      Warnung 6002: Für Tabelle/Sicht 'Haushaltsrechner.dbo.V_OVERVIEW' ist kein Primärschlüssel definiert. Der Schlüssel wurde abgeleitet, und die Definition wurde als schreibgeschützte Tabelle/Sicht erstellt.
+      -->
+        <EntityType Name="V_OVERVIEW">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="AMOUNT" />
+            <PropertyRef Name="DATE_ADDED" />
+            <PropertyRef Name="ACCOUNT_ID" />
+            <PropertyRef Name="CATEGORY_ID" />
+            <PropertyRef Name="USER_ID" />
+            <PropertyRef Name="USER_NAME" />
+            <PropertyRef Name="CATEGORY_NAME" />
+            <PropertyRef Name="ACCOUNT_NAME" />
+            <PropertyRef Name="REASON_ID" />
+            <PropertyRef Name="REASON_TEXT" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="AMOUNT" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="MESSAGE" Type="nvarchar(max)" />
+          <Property Name="DATE_ADDED" Type="datetime" Nullable="false" />
+          <Property Name="DATE_EDIT" Type="datetime" />
+          <Property Name="ACCOUNT_ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CATEGORY_ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="USER_ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="USER_NAME" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CATEGORY_NAME" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ACCOUNT_NAME" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="REASON_ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="REASON_TEXT" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_ACCOUNTUSER_ACCOUNT1">
+          <End Role="ACCOUNT" Type="HaushaltsrechnerModel.Store.ACCOUNT" Multiplicity="1" />
+          <End Role="ACCOUNTUSER" Type="HaushaltsrechnerModel.Store.ACCOUNTUSER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ACCOUNT">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ACCOUNTUSER">
+              <PropertyRef Name="ACCOUNT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ACCOUNTUSER_USER">
+          <End Role="USER" Type="HaushaltsrechnerModel.Store.USER" Multiplicity="1" />
+          <End Role="ACCOUNTUSER" Type="HaushaltsrechnerModel.Store.ACCOUNTUSER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ACCOUNTUSER">
+              <PropertyRef Name="USER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MOVEMENT_ACCOUNT">
+          <End Role="ACCOUNT" Type="HaushaltsrechnerModel.Store.ACCOUNT" Multiplicity="1" />
+          <End Role="MOVEMENT" Type="HaushaltsrechnerModel.Store.MOVEMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ACCOUNT">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="MOVEMENT">
+              <PropertyRef Name="ACCOUNT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MOVEMENT_CATEGORY">
+          <End Role="CATEGORY" Type="HaushaltsrechnerModel.Store.CATEGORY" Multiplicity="1" />
+          <End Role="MOVEMENT" Type="HaushaltsrechnerModel.Store.MOVEMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CATEGORY">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="MOVEMENT">
+              <PropertyRef Name="CATEGORY_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MOVEMENT_REASON">
+          <End Role="REASON" Type="HaushaltsrechnerModel.Store.REASON" Multiplicity="1" />
+          <End Role="MOVEMENT" Type="HaushaltsrechnerModel.Store.MOVEMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REASON">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="MOVEMENT">
+              <PropertyRef Name="REASON_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MOVEMENT_USER">
+          <End Role="USER" Type="HaushaltsrechnerModel.Store.USER" Multiplicity="1" />
+          <End Role="MOVEMENT" Type="HaushaltsrechnerModel.Store.MOVEMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="MOVEMENT">
+              <PropertyRef Name="USER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RIGHTUSER_RIGHT">
+          <End Role="RIGHT" Type="HaushaltsrechnerModel.Store.RIGHT" Multiplicity="1" />
+          <End Role="RIGHTUSER" Type="HaushaltsrechnerModel.Store.RIGHTUSER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RIGHT">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RIGHTUSER">
+              <PropertyRef Name="RIGHT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RIGHTUSER_USER">
+          <End Role="USER" Type="HaushaltsrechnerModel.Store.USER" Multiplicity="1" />
+          <End Role="RIGHTUSER" Type="HaushaltsrechnerModel.Store.RIGHTUSER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RIGHTUSER">
+              <PropertyRef Name="USER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HaushaltsrechnerModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="HaushaltsrechnerEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+          <EntitySet Name="ACCOUNT" EntityType="HaushaltsrechnerModel.ACCOUNT" />
+          <EntitySet Name="CATEGORY" EntityType="HaushaltsrechnerModel.CATEGORY" />
+          <EntitySet Name="MOVEMENT" EntityType="HaushaltsrechnerModel.MOVEMENT" />
+          <EntitySet Name="REASON" EntityType="HaushaltsrechnerModel.REASON" />
+          <EntitySet Name="RIGHT" EntityType="HaushaltsrechnerModel.RIGHT" />
+          <EntitySet Name="USER" EntityType="HaushaltsrechnerModel.USER" />
+          <AssociationSet Name="FK_MOVEMENT_ACCOUNT" Association="HaushaltsrechnerModel.FK_MOVEMENT_ACCOUNT">
+            <End Role="ACCOUNT" EntitySet="ACCOUNT" />
+            <End Role="MOVEMENT" EntitySet="MOVEMENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MOVEMENT_CATEGORY" Association="HaushaltsrechnerModel.FK_MOVEMENT_CATEGORY">
+            <End Role="CATEGORY" EntitySet="CATEGORY" />
+            <End Role="MOVEMENT" EntitySet="MOVEMENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MOVEMENT_REASON" Association="HaushaltsrechnerModel.FK_MOVEMENT_REASON">
+            <End Role="REASON" EntitySet="REASON" />
+            <End Role="MOVEMENT" EntitySet="MOVEMENT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MOVEMENT_USER" Association="HaushaltsrechnerModel.FK_MOVEMENT_USER">
+            <End Role="USER" EntitySet="USER" />
+            <End Role="MOVEMENT" EntitySet="MOVEMENT" />
+          </AssociationSet>
+          <AssociationSet Name="ACCOUNTUSER" Association="HaushaltsrechnerModel.ACCOUNTUSER">
+            <End Role="ACCOUNT" EntitySet="ACCOUNT" />
+            <End Role="USER" EntitySet="USER" />
+          </AssociationSet>
+          <AssociationSet Name="RIGHTUSER" Association="HaushaltsrechnerModel.RIGHTUSER">
+            <End Role="RIGHT" EntitySet="RIGHT" />
+            <End Role="USER" EntitySet="USER" />
+          </AssociationSet>
+          <EntitySet Name="V_OVERVIEW" EntityType="HaushaltsrechnerModel.V_OVERVIEW" />
+        </EntityContainer>
+        <EntityType Name="ACCOUNT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Guid" Name="ID" Nullable="false" />
+          <Property Type="String" Name="NAME" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="MOVEMENT" Relationship="HaushaltsrechnerModel.FK_MOVEMENT_ACCOUNT" FromRole="ACCOUNT" ToRole="MOVEMENT" />
+          <NavigationProperty Name="USER" Relationship="HaushaltsrechnerModel.ACCOUNTUSER" FromRole="ACCOUNT" ToRole="USER" />
+        </EntityType>
+        <EntityType Name="CATEGORY">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Guid" Name="ID" Nullable="false" />
+          <Property Type="String" Name="NAME" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="MOVEMENT" Relationship="HaushaltsrechnerModel.FK_MOVEMENT_CATEGORY" FromRole="CATEGORY" ToRole="MOVEMENT" />
+        </EntityType>
+        <EntityType Name="MOVEMENT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Guid" Name="ID" Nullable="false" />
+          <Property Type="Decimal" Name="AMOUNT" Nullable="false" Precision="10" Scale="2" />
+          <Property Type="String" Name="MESSAGE" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="DATE_ADDED" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="DATE_EDIT" Precision="3" />
+          <Property Type="Guid" Name="ACCOUNT_ID" Nullable="false" />
+          <Property Type="Guid" Name="CATEGORY_ID" Nullable="false" />
+          <Property Type="Guid" Name="USER_ID" Nullable="false" />
+          <Property Type="Guid" Name="REASON_ID" Nullable="false" />
+          <NavigationProperty Name="ACCOUNT" Relationship="HaushaltsrechnerModel.FK_MOVEMENT_ACCOUNT" FromRole="MOVEMENT" ToRole="ACCOUNT" />
+          <NavigationProperty Name="CATEGORY" Relationship="HaushaltsrechnerModel.FK_MOVEMENT_CATEGORY" FromRole="MOVEMENT" ToRole="CATEGORY" />
+          <NavigationProperty Name="REASON" Relationship="HaushaltsrechnerModel.FK_MOVEMENT_REASON" FromRole="MOVEMENT" ToRole="REASON" />
+          <NavigationProperty Name="USER" Relationship="HaushaltsrechnerModel.FK_MOVEMENT_USER" FromRole="MOVEMENT" ToRole="USER" />
+        </EntityType>
+        <EntityType Name="REASON">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Guid" Name="ID" Nullable="false" />
+          <Property Type="String" Name="TEXT" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="MOVEMENT" Relationship="HaushaltsrechnerModel.FK_MOVEMENT_REASON" FromRole="REASON" ToRole="MOVEMENT" />
+        </EntityType>
+        <EntityType Name="RIGHT">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Guid" Name="ID" Nullable="false" />
+          <Property Type="String" Name="NAME" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="USER" Relationship="HaushaltsrechnerModel.RIGHTUSER" FromRole="RIGHT" ToRole="USER" />
+        </EntityType>
+        <EntityType Name="USER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Guid" Name="ID" Nullable="false" />
+          <Property Type="String" Name="NAME" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PASSWORT" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="ISADMIN" />
+          <NavigationProperty Name="MOVEMENT" Relationship="HaushaltsrechnerModel.FK_MOVEMENT_USER" FromRole="USER" ToRole="MOVEMENT" />
+          <NavigationProperty Name="ACCOUNT" Relationship="HaushaltsrechnerModel.ACCOUNTUSER" FromRole="USER" ToRole="ACCOUNT" />
+          <NavigationProperty Name="RIGHT" Relationship="HaushaltsrechnerModel.RIGHTUSER" FromRole="USER" ToRole="RIGHT" />
+          <Property Type="String" Name="CULTURE" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_MOVEMENT_ACCOUNT">
+          <End Type="HaushaltsrechnerModel.ACCOUNT" Role="ACCOUNT" Multiplicity="1" />
+          <End Type="HaushaltsrechnerModel.MOVEMENT" Role="MOVEMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ACCOUNT">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="MOVEMENT">
+              <PropertyRef Name="ACCOUNT_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MOVEMENT_CATEGORY">
+          <End Type="HaushaltsrechnerModel.CATEGORY" Role="CATEGORY" Multiplicity="1" />
+          <End Type="HaushaltsrechnerModel.MOVEMENT" Role="MOVEMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CATEGORY">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="MOVEMENT">
+              <PropertyRef Name="CATEGORY_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MOVEMENT_REASON">
+          <End Type="HaushaltsrechnerModel.REASON" Role="REASON" Multiplicity="1" />
+          <End Type="HaushaltsrechnerModel.MOVEMENT" Role="MOVEMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="REASON">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="MOVEMENT">
+              <PropertyRef Name="REASON_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MOVEMENT_USER">
+          <End Type="HaushaltsrechnerModel.USER" Role="USER" Multiplicity="1" />
+          <End Type="HaushaltsrechnerModel.MOVEMENT" Role="MOVEMENT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="MOVEMENT">
+              <PropertyRef Name="USER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ACCOUNTUSER">
+          <End Type="HaushaltsrechnerModel.ACCOUNT" Role="ACCOUNT" Multiplicity="*" />
+          <End Type="HaushaltsrechnerModel.USER" Role="USER" Multiplicity="*" />
+        </Association>
+        <Association Name="RIGHTUSER">
+          <End Type="HaushaltsrechnerModel.RIGHT" Role="RIGHT" Multiplicity="*" />
+          <End Type="HaushaltsrechnerModel.USER" Role="USER" Multiplicity="*" />
+        </Association>
+        <EntityType Name="V_OVERVIEW">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="AMOUNT" />
+            <PropertyRef Name="DATE_ADDED" />
+            <PropertyRef Name="ACCOUNT_ID" />
+            <PropertyRef Name="CATEGORY_ID" />
+            <PropertyRef Name="USER_ID" />
+            <PropertyRef Name="USER_NAME" />
+            <PropertyRef Name="CATEGORY_NAME" />
+            <PropertyRef Name="ACCOUNT_NAME" />
+            <PropertyRef Name="REASON_ID" />
+            <PropertyRef Name="REASON_TEXT" />
+          </Key>
+          <Property Type="Guid" Name="ID" Nullable="false" />
+          <Property Type="Decimal" Name="AMOUNT" Nullable="false" Precision="10" Scale="2" />
+          <Property Type="String" Name="MESSAGE" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="DATE_ADDED" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="DATE_EDIT" Precision="3" />
+          <Property Type="Guid" Name="ACCOUNT_ID" Nullable="false" />
+          <Property Type="Guid" Name="CATEGORY_ID" Nullable="false" />
+          <Property Type="Guid" Name="USER_ID" Nullable="false" />
+          <Property Type="String" Name="USER_NAME" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CATEGORY_NAME" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ACCOUNT_NAME" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Guid" Name="REASON_ID" Nullable="false" />
+          <Property Type="String" Name="REASON_TEXT" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HaushaltsrechnerModelStoreContainer" CdmEntityContainer="HaushaltsrechnerEntities">
+          <EntitySetMapping Name="ACCOUNT">
+            <EntityTypeMapping TypeName="HaushaltsrechnerModel.ACCOUNT">
+              <MappingFragment StoreEntitySet="ACCOUNT">
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CATEGORY">
+            <EntityTypeMapping TypeName="HaushaltsrechnerModel.CATEGORY">
+              <MappingFragment StoreEntitySet="CATEGORY">
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MOVEMENT">
+            <EntityTypeMapping TypeName="HaushaltsrechnerModel.MOVEMENT">
+              <MappingFragment StoreEntitySet="MOVEMENT">
+                <ScalarProperty Name="REASON_ID" ColumnName="REASON_ID" />
+                <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+                <ScalarProperty Name="CATEGORY_ID" ColumnName="CATEGORY_ID" />
+                <ScalarProperty Name="ACCOUNT_ID" ColumnName="ACCOUNT_ID" />
+                <ScalarProperty Name="DATE_EDIT" ColumnName="DATE_EDIT" />
+                <ScalarProperty Name="DATE_ADDED" ColumnName="DATE_ADDED" />
+                <ScalarProperty Name="MESSAGE" ColumnName="MESSAGE" />
+                <ScalarProperty Name="AMOUNT" ColumnName="AMOUNT" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="REASON">
+            <EntityTypeMapping TypeName="HaushaltsrechnerModel.REASON">
+              <MappingFragment StoreEntitySet="REASON">
+                <ScalarProperty Name="TEXT" ColumnName="TEXT" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RIGHT">
+            <EntityTypeMapping TypeName="HaushaltsrechnerModel.RIGHT">
+              <MappingFragment StoreEntitySet="RIGHT">
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USER">
+            <EntityTypeMapping TypeName="HaushaltsrechnerModel.USER">
+              <MappingFragment StoreEntitySet="USER">
+                <ScalarProperty Name="CULTURE" ColumnName="CULTURE" />
+                <ScalarProperty Name="ISADMIN" ColumnName="ISADMIN" />
+                <ScalarProperty Name="PASSWORT" ColumnName="PASSWORT" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="ACCOUNTUSER" TypeName="HaushaltsrechnerModel.ACCOUNTUSER" StoreEntitySet="ACCOUNTUSER">
+            <EndProperty Name="USER">
+              <ScalarProperty Name="ID" ColumnName="USER_ID" />
+            </EndProperty>
+            <EndProperty Name="ACCOUNT">
+              <ScalarProperty Name="ID" ColumnName="ACCOUNT_ID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="RIGHTUSER" TypeName="HaushaltsrechnerModel.RIGHTUSER" StoreEntitySet="RIGHTUSER">
+            <EndProperty Name="USER">
+              <ScalarProperty Name="ID" ColumnName="USER_ID" />
+            </EndProperty>
+            <EndProperty Name="RIGHT">
+              <ScalarProperty Name="ID" ColumnName="RIGHT_ID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="V_OVERVIEW">
+            <EntityTypeMapping TypeName="HaushaltsrechnerModel.V_OVERVIEW">
+              <MappingFragment StoreEntitySet="V_OVERVIEW">
+                <ScalarProperty Name="REASON_TEXT" ColumnName="REASON_TEXT" />
+                <ScalarProperty Name="REASON_ID" ColumnName="REASON_ID" />
+                <ScalarProperty Name="ACCOUNT_NAME" ColumnName="ACCOUNT_NAME" />
+                <ScalarProperty Name="CATEGORY_NAME" ColumnName="CATEGORY_NAME" />
+                <ScalarProperty Name="USER_NAME" ColumnName="USER_NAME" />
+                <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+                <ScalarProperty Name="CATEGORY_ID" ColumnName="CATEGORY_ID" />
+                <ScalarProperty Name="ACCOUNT_ID" ColumnName="ACCOUNT_ID" />
+                <ScalarProperty Name="DATE_EDIT" ColumnName="DATE_EDIT" />
+                <ScalarProperty Name="DATE_ADDED" ColumnName="DATE_ADDED" />
+                <ScalarProperty Name="MESSAGE" ColumnName="MESSAGE" />
+                <ScalarProperty Name="AMOUNT" ColumnName="AMOUNT" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="HaushaltsRechnerEntities" ZoomLevel="47">
+        <EntityTypeShape EntityType="HaushaltsrechnerModel.ACCOUNT" Width="1.5" PointX="1.9253595256830378" PointY="17.679935657270224" />
+        <EntityTypeShape EntityType="HaushaltsrechnerModel.CATEGORY" Width="1.5" PointX="6.7919763004369926" PointY="4.3797512521873" />
+        <EntityTypeShape EntityType="HaushaltsrechnerModel.MOVEMENT" Width="1.5" PointX="3.5084134300744223" PointY="10.676687931025722" />
+        <EntityTypeShape EntityType="HaushaltsrechnerModel.REASON" Width="1.5" PointX="4.5370984731880473" PointY="7.52983057849567" />
+        <EntityTypeShape EntityType="HaushaltsrechnerModel.RIGHT" Width="1.5" PointX="9.2359283777121117" PointY="17.4704111448817" />
+        <EntityTypeShape EntityType="HaushaltsrechnerModel.USER" Width="1.5" PointX="4.875" PointY="15" />
+        <AssociationConnector Association="HaushaltsrechnerModel.FK_MOVEMENT_ACCOUNT" />
+        <AssociationConnector Association="HaushaltsrechnerModel.FK_MOVEMENT_CATEGORY" />
+        <AssociationConnector Association="HaushaltsrechnerModel.FK_MOVEMENT_REASON" />
+        <AssociationConnector Association="HaushaltsrechnerModel.FK_MOVEMENT_USER" />
+        <AssociationConnector Association="HaushaltsrechnerModel.ACCOUNTUSER" />
+        <AssociationConnector Association="HaushaltsrechnerModel.RIGHTUSER" />
+        <EntityTypeShape EntityType="HaushaltsrechnerModel.V_OVERVIEW" Width="1.5" PointX="2.9842451191433916" PointY="22.18649635752034" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

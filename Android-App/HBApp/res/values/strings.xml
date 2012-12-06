@@ -1,0 +1,62 @@
+<!-- 
+    This file is part of HaushaltsRechner.
+
+    HaushaltsRechner is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    HaushaltsRechner is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with HaushaltsRechner.  If not, see <http://www.gnu.org/licenses/>.
+
+    Diese Datei ist Teil von HaushaltsRechner.
+
+    HaushaltsRechner ist Freie Software: Sie können es unter den Bedingungen
+    der GNU General Public License, wie von der Free Software Foundation,
+    Version 3 der Lizenz oder (nach Ihrer Option) jeder späteren
+    veröffentlichten Version, weiterverbreiten und/oder modifizieren.
+
+    HaushaltsRechner wird in der Hoffnung, dass es nützlich sein wird, aber
+    OHNE JEDE GEWÄHELEISTUNG, bereitgestellt; sogar ohne die implizite
+    Gewährleistung der MARKTFÄHIGKEIT oder EIGNUNG FÜR EINEN BESTIMMTEN ZWECK.
+    Siehe die GNU General Public License für weitere Details.
+
+    Sie sollten eine Kopie der GNU General Public License zusammen mit diesem
+    Programm erhalten haben. Wenn nicht, siehe <http://www.gnu.org/licenses/>.
+-->
+
+<resources>
+
+    <string name="appName">HBApp</string>
+    <string name="hello_world">Hello world!</string>
+    
+    <string name="titleStartActivity">Haushaltsbuch</string>    
+    <string name="titleNewEntryActivity">Neuer Eintrag</string>
+    <string name="text">Text</string>
+    
+    <string name="btInput">Neue Eingabe</string>
+    <string name="btList">Liste anzeigen</string>
+    <string name="btSave">Speichern</string>
+    <string name="btShow">Anzeigen</string>
+    <string name="btOK">OK</string>
+    <string name="btCancel">Abbrechen</string>
+    <string name="btUpdate">Update</string>
+    <string name="btClear">Clear</string>
+    <string name="btDelete">Löschen</string>
+    
+    <string name="menuSettings">Settings</string>
+    <string name="menuExit">Exit</string>
+    <string name="menuDeleteFiles">Dateien Löschen</string>
+    
+    <string name="date">Datum</string>    
+    <string name="account">Konto</string>
+    <string name="amount">Betrag</string>
+    <string name="reason">Grund</string>
+    <string name="category">Kategorie</string>
+
+</resources>

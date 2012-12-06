@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HaushaltsRechner.Win.Service.Synchronization", "HaushaltsRechner.Win.Service.Synchronization\HaushaltsRechner.Win.Service.Synchronization.csproj", "{4A244D17-8579-426C-B724-08ADC45DEB11}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HaushaltsRechner.Business", "HaushaltsRechner.Business\HaushaltsRechner.Business.csproj", "{0CFA532B-59A7-4225-8493-1CD4A587B1CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HaushaltsRechner.Framework", "HaushaltsRechner.Framework\HaushaltsRechner.Framework.csproj", "{CAFA62F2-3079-4FF3-BF17-224A97184AA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HaushaltsRechner.Data", "HaushaltsRechner.Data\HaushaltsRechner.Data.csproj", "{428A32F3-3AD1-453E-84A9-A5C019715138}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://project2.ba-leipzig.de:8080/tfs/defaultcollection
+		SccProjectUniqueName0 = HaushaltsRechner.Win.Service.Synchronization\\HaushaltsRechner.Win.Service.Synchronization.csproj
+		SccProjectName0 = HaushaltsRechner.Win.Service.Synchronization
+		SccAuxPath0 = http://project2.ba-leipzig.de:8080/tfs/defaultcollection
+		SccLocalPath0 = HaushaltsRechner.Win.Service.Synchronization
+		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName1 = HaushaltsRechner.Business\\HaushaltsRechner.Business.csproj
+		SccProjectName1 = HaushaltsRechner.Business
+		SccAuxPath1 = http://project2.ba-leipzig.de:8080/tfs/defaultcollection
+		SccLocalPath1 = HaushaltsRechner.Business
+		SccProvider1 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName2 = HaushaltsRechner.Framework\\HaushaltsRechner.Framework.csproj
+		SccProjectName2 = HaushaltsRechner.Framework
+		SccAuxPath2 = http://project2.ba-leipzig.de:8080/tfs/defaultcollection
+		SccLocalPath2 = HaushaltsRechner.Framework
+		SccProvider2 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectUniqueName3 = HaushaltsRechner.Data\\HaushaltsRechner.Data.csproj
+		SccProjectName3 = HaushaltsRechner.Data
+		SccAuxPath3 = http://project2.ba-leipzig.de:8080/tfs/defaultcollection
+		SccLocalPath3 = HaushaltsRechner.Data
+		SccProvider3 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4A244D17-8579-426C-B724-08ADC45DEB11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A244D17-8579-426C-B724-08ADC45DEB11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A244D17-8579-426C-B724-08ADC45DEB11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A244D17-8579-426C-B724-08ADC45DEB11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CFA532B-59A7-4225-8493-1CD4A587B1CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CFA532B-59A7-4225-8493-1CD4A587B1CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CFA532B-59A7-4225-8493-1CD4A587B1CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CFA532B-59A7-4225-8493-1CD4A587B1CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAFA62F2-3079-4FF3-BF17-224A97184AA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAFA62F2-3079-4FF3-BF17-224A97184AA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAFA62F2-3079-4FF3-BF17-224A97184AA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAFA62F2-3079-4FF3-BF17-224A97184AA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{428A32F3-3AD1-453E-84A9-A5C019715138}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{428A32F3-3AD1-453E-84A9-A5C019715138}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{428A32F3-3AD1-453E-84A9-A5C019715138}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{428A32F3-3AD1-453E-84A9-A5C019715138}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
