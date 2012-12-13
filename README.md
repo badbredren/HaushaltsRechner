@@ -1,4 +1,4 @@
-Haushaltsrechner
+Haushaltsrechner v0.1 Alpha
 ----------------  
 
 verwendete Frameworks/Plugins/Icons  
